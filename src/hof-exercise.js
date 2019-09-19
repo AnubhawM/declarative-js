@@ -21,24 +21,38 @@ const calculateTotalImperative = (items, tax) => {
 }
 
 // prices: (items: [{price: number}]) -> [number]
-// const prices = TODO
+const prices = items => {
+  const priceArr = []
+  priceArr.push(...items)
+  return priceArr.map(ret => ret.price)
+}
 
 // sum: (numbers: [number]) -> number
-// const sum = TODO
+const sum = numbers => {
+  const numbersArr = []
+  numbersArr.push(...numbers)
+  return numbersArr.reduce((a, b) => a + b)
+
+  // return numbers.reduce((a, b) => a + b)
+}
 
 // selectTaxable: (items: [{taxable: boolean}]) -> [{taxable: boolean}]
-// const selectTaxable = TODO
+const selectTaxable = items => {
+  return items.filter(items => items.taxable)
+}
 
 // applyTax: (prices: [number], tax: number) -> [number]
-// const applyTax = TODO
+const applyTax = (prices, tax) => {
+  return prices.map(a => a * tax)
+}
 
-// baseSum: TODO
+// baseSum: (items: [number]) -> number
 const baseSum = items => sum(prices(items))
 
-// taxSum: TODO
+// taxSum: (items: [{taxable: boolean}], tax: number) -> number
 const taxSum = (items, tax) => sum(applyTax(prices(selectTaxable(items)), tax))
 
-// calculateTotalDeclarative: TODO
+// calculateTotalDeclarative: (items: [number], tax: number) -> number
 const calculateTotalDeclarative = (items, tax) =>
   baseSum(items) + taxSum(items, tax)
 
