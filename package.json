@@ -16,7 +16,7 @@
     "@babel/preset-env": "^7.6.0",
     "jsverify": "^0.8.4",
     "lodash": "^4.17.15",
-    "mocha": "^6.2.0",
+    "mocha": "^10.2.0",
     "nodemon": "^1.19.2"
   }
 }
